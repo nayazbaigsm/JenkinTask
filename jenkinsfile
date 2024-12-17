@@ -1,1 +1,12 @@
-#!/bin/bash
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                bat '''./f1.sh
+                      ./f2.sh '''
+            }
+        }
+    }
+}
