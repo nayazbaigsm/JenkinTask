@@ -2,10 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('permission'){
+        steps{
+            bat ''' chmod 777 f1.sh
+                    chmod 777 f2.sh
+                    echo "permission granted" '''
+            }
+        }
+        stage('execution') {
             steps {
                 bat '''./f1.sh
-                      ./f2.sh '''
+                      ./f2.sh
+                        echo "executed successfully" '''
+            }
+        }
+  stage('display') {
+            steps {
+                bat ''' cat f1.sh
+                        cat f2.sh'''
             }
         }
     }
