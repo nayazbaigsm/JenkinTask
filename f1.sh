@@ -1,4 +1,3 @@
-#!/bin/bash
 read -p "create a directory" Directory
 mkdir -p $Directory
 for Subdir in {1..3}
