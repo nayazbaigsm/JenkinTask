@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat '''./f1.sh
+                sh '''./f1.sh
                       ./f2.sh '''
             }
         }
