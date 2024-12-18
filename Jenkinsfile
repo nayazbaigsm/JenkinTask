@@ -1,6 +1,11 @@
 pipeline{ 
     agent any
     stages{
+         stage('clean'){
+            steps{
+                sh 'rm -rf *'
+            }
+         }
         stage('permission'){
             steps{
                  sh 'chmod 777 f2.sh'
